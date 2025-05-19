@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const audioPlayback = document.getElementById("audioPlayback");
 	const recordingStatus = document.getElementById("recordingStatus");
 
-	let prepTimeInSeconds = 10;
-	let speechTimeInSeconds = 10;
+	let prepTimeInSeconds = 90;
+	let speechTimeInSeconds = 60;
 	let timer;
 	let currentPhase = "idle"; // 'idle', 'prep', 'speech'
 
