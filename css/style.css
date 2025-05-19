@@ -1,0 +1,407 @@
+:root {
+	--primary-color: #0066cc;
+	--secondary-color: #00477e;
+	--accent-color: #00a0dc;
+	--danger-color: #d32f2f;
+	--warning-color: #f39c12;
+	--dark-color: #333333;
+	--light-color: #f5f5f5;
+	--border-color: #e0e0e0;
+	--transition: all 0.3s ease;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Segoe UI", Arial, sans-serif;
+	line-height: 1.6;
+	color: var(--dark-color);
+	background-color: #f0f2f5;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin-bottom: 20px;
+	color: #4a90e2;
+}
+
+button {
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 15px 30px;
+	font-size: 1.2em;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+.timer {
+	font-size: 2em;
+	margin: 20px 0;
+	color: #e94e77;
+}
+
+.recording-controls {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.recording-controls button {
+	margin: 10px;
+	background-color: #e94e77;
+}
+
+.recording-controls button:hover {
+	background-color: #d43f6b;
+}
+
+.topic-display {
+	font-size: 1.5em;
+	margin: 20px 0;
+	color: #f39c12;
+	text-align: center;
+	padding: 10px;
+	border: 2px dashed #f39c12;
+	border-radius: 10px;
+	background-color: rgba(243, 156, 18, 0.1);
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+header h1 {
+	color: var(--primary-color);
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+}
+
+header p {
+	color: var(--dark-color);
+	opacity: 0.8;
+}
+
+main {
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin-bottom: 2rem;
+}
+
+.topic-container {
+	text-align: center;
+	margin-bottom: 2rem;
+	min-height: 80px;
+}
+
+#topicDisplay {
+	font-size: 1.5rem;
+	padding: 1rem;
+	border-radius: 8px;
+	background-color: rgba(52, 152, 219, 0.1);
+	border-left: 4px solid var(--primary-color);
+	transition: var(--transition);
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0;
+}
+
+.btn-primary {
+	background-color: var(--primary-color);
+	color: white;
+	border: none;
+	padding: 0.8rem 2rem;
+	font-size: 1.2rem;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: var(--transition);
+	box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+	background-color: #2980b9;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+}
+
+.btn-primary:disabled {
+	background-color: #95a5a6;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+.audio-container {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+}
+
+audio {
+	width: 100%;
+	max-width: 500px;
+	border-radius: 30px;
+}
+
+.hidden {
+	display: none;
+}
+
+#recordingStatus {
+	font-size: 0.9rem;
+	color: var(--dark-color);
+	margin-top: 0.5rem;
+}
+
+#recordingStatus.recording {
+	color: var(--danger-color);
+	animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
+
+footer {
+	text-align: center;
+	padding: 1rem;
+	color: var(--dark-color);
+	opacity: 0.7;
+	font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+	.container {
+		padding: 1rem;
+	}
+
+	header h1 {
+		font-size: 2rem;
+	}
+
+	#topicDisplay {
+		font-size: 1.2rem;
+	}
+}
+
+.assessment-container {
+	max-width: 650px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.assessment-header {
+	background-color: var(--primary-color);
+	color: white;
+	padding: 1rem 1.5rem;
+	border-bottom: 3px solid var(--secondary-color);
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+}
+
+.assessment-subtitle {
+	font-size: 0.9rem;
+	opacity: 0.9;
+	margin-top: 0.2rem;
+}
+
+.assessment-main {
+	padding: 0;
+}
+
+.assessment-section {
+	padding: 1.5rem;
+}
+
+.section-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--border-color);
+	padding-bottom: 0.5rem;
+}
+
+.section-number {
+	background-color: var(--primary-color);
+	color: white;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	margin-right: 10px;
+	font-size: 0.85rem;
+}
+
+.section-header h3 {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.instructions {
+	background-color: rgba(0, 102, 204, 0.1);
+	border-left: 3px solid var(--primary-color);
+	padding: 0.8rem 1rem;
+	margin-bottom: 1.5rem;
+	font-size: 0.9rem;
+}
+
+.topic-container {
+	margin-bottom: 1.5rem;
+}
+
+.topic-label,
+.recording-label {
+	font-size: 0.75rem;
+	font-weight: bold;
+	color: var(--secondary-color);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 0.5rem;
+}
+
+#topicDisplay {
+	font-size: 1.2rem;
+	padding: 1rem;
+	border-radius: 4px;
+	background-color: rgba(0, 102, 204, 0.05);
+	border: 1px solid var(--border-color);
+	transition: var(--transition);
+}
+
+.timer-container {
+	display: flex;
+	justify-content: center;
+	margin: 1.5rem 0;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	margin: 1.5rem 0;
+}
+
+.assessment-btn {
+	background-color: var(--primary-color);
+	color: white;
+	border: none;
+	padding: 0.7rem 1.5rem;
+	font-size: 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: var(--transition);
+	font-weight: 500;
+}
+
+.assessment-btn:hover {
+	background-color: var(--secondary-color);
+}
+
+.assessment-btn:disabled {
+	background-color: #cccccc;
+	cursor: not-allowed;
+}
+
+.audio-container {
+	margin-top: 1.5rem;
+}
+
+audio {
+	width: 100%;
+	height: 40px;
+	border-radius: 4px;
+}
+
+.hidden {
+	display: none;
+}
+
+#recordingStatus {
+	font-size: 0.8rem;
+	color: var(--dark-color);
+	margin-top: 0.5rem;
+}
+
+#recordingStatus.recording {
+	color: var(--danger-color);
+	animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
+
+.assessment-footer {
+	background-color: #f9f9f9;
+	padding: 0.8rem 1.5rem;
+	text-align: center;
+	font-size: 0.8rem;
+	color: #666;
+	border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 600px) {
+	.assessment-container {
+		max-width: 100%;
+	}
+
+	.assessment-section {
+		padding: 1rem;
+	}
+
+	.logo {
+		font-size: 1.3rem;
+	}
+}
